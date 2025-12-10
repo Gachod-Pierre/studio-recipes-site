@@ -1,9 +1,6 @@
-import { authorType } from './authorTypes'
 import {bookType} from './bookType'
-import { categoryType } from './categoryType'
+import {authorType} from './authorType'
+import {categoryType} from './categoryType'
+import {siteSettings} from './siteSettings'
 
-export const schemaTypes = [
-    bookType,
-    authorType,
-    categoryType
-]
+export const schemaTypes = [bookType, authorType, categoryType, siteSettings]
