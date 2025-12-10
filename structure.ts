@@ -7,7 +7,10 @@ export const customStructure: StructureResolver = (S: StructureBuilder) =>
       S.listItem()
         .title('Site Settings')
         .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
+      S.listItem()
+        .title('Home Page')
+        .child(S.document().schemaType('homePage').documentId('homePage')),
       ...S.documentTypeListItems().filter(
-        (listItem) => !['siteSettings'].includes(listItem.getId()!),
+        (listItem) => !['siteSettings', 'homePage'].includes(listItem.getId()!),
       ),
     ])
