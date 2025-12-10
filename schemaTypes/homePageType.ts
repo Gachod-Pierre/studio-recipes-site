@@ -13,6 +13,19 @@ export const homePage = defineType({
       name: 'title',
       title: 'Page Title',
       type: 'string',
+      group: 'content',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'subtitle',
+      title: 'Page Subtitle',
+      type: 'string',
+      group: 'content',
+    }),
+    defineField({
+      name: 'seoTitle',
+      title: 'SEO Title',
+      type: 'string',
       group: 'seo',
       validation: (Rule) => Rule.required(),
     }),
@@ -27,29 +40,11 @@ export const homePage = defineType({
     defineField({
       name: 'heroBanner',
       title: 'Hero Banner',
-      type: 'object',
+      type: 'image',
       group: 'content',
-      fields: [
-        defineField({
-          name: 'image',
-          title: 'Banner Image',
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-        }),
-        defineField({
-          name: 'title',
-          title: 'Banner Title',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        }),
-        defineField({
-          name: 'subtitle',
-          title: 'Banner Subtitle',
-          type: 'string',
-        }),
-      ],
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 })
